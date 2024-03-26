@@ -1,0 +1,7 @@
+label>span {
+  display: block;
+}
+
+label, span, input,button {
+  font-size: 1.4rem;
+}
