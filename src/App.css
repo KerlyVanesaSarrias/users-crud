@@ -1,0 +1,26 @@
+.app {
+    margin: 0.5em;
+
+}
+
+.app_title {
+    font-weight: 900;
+    font-size: 2em;
+    margin: 1em;
+}
+
+.btn_create {
+    position: absolute;
+    font-size: 1em;
+    font-weight: 300;
+    top: 0.6em;
+    right: 1.5em;
+}
+
+.user_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+
+}

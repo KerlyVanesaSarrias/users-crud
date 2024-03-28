@@ -8,6 +8,7 @@ import UserCard from './components/UserCard'
 function App() {
 
   const [userEdit, setUserEdit] = useState()
+  const [formIsClose, setFormIsClose] = useState(true)
 
   const BASEURL = 'https://users-crud.academlo.tech'
   const [users, getUsers, createUser, deleteUser,updateUser] =  useCrud(BASEURL)
@@ -16,25 +17,33 @@ function App() {
     getUsers('/users/')
   }, [])
   
-console.log(users)
+const handleOpenForm = () => {
+  setFormIsClose (false)
+}
 
   return (
-      <div>
-        <h1>User Crud</h1>
+      <div className='app'>
+        <header className='app_header'>
+          <h1 className='app_title'>Users</h1>
+          <button onClick={handleOpenForm} className='form_btn btn_create'> + Create new user</button>
+        </header>
         <FormUsers
         createUser={createUser}
         userEdit={userEdit}
         updateUser={updateUser}
         setUserEdit={setUserEdit}
+        formIsClose={formIsClose}
+        setFormIsClose={setFormIsClose}
         />
-        <div>
+        <div className='user_container'>
           {
             users?.map(user => (
-              <UserCard
+              <UserCard 
               key={user.id}
               user={user}
               deleteUser={deleteUser}
               setUserEdit={setUserEdit}
+              handleOpenForm={handleOpenForm}
               />
             ))
           }

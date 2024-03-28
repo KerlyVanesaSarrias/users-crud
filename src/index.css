@@ -1,7 +1,33 @@
-label>span {
-  display: block;
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Space+Grotesk:wght@300..700&display=swap');
+
+html {
+  font-family: "Space Grotesk", sans-serif;}
+
+* {
+  box-sizing: border-box;
 }
 
-label, span, input,button {
-  font-size: 1.4rem;
+body {
+  margin: 0;
+}
+
+h1,h2,h3,p,ul,hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+  font-family: inherit;
+
 }
