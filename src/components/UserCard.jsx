@@ -1,6 +1,6 @@
-import { BsArchive} from "react-icons/bs";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { FiEdit3 } from "react-icons/fi";
-import { LiaBirthdayCakeSolid } from "react-icons/lia";
+import { IoGiftOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 import './styles/UserCard.css'
 
@@ -22,17 +22,17 @@ const UserCard = ({ user, deleteUser,setUserEdit,handleOpenForm }) => {
         <ul>
             <li className="card_items">
                 <span className="card_details"> Email</span>
-                <span>  <MdOutlineMailOutline />  {user.email}</span>
+                <span className="card_icon">  <MdOutlineMailOutline />  {user.email}</span>
             </li>
             <li className="card_items">
                 <span className="card_details"> Birthday</span>
-                <span> <LiaBirthdayCakeSolid /> {user.birthday}</span>
+                <span> <IoGiftOutline /> {user.birthday}</span>
             </li>
         </ul>
         <hr className="user_card_line"></hr>
-        <div className="card_btns">
-        <button  onClick={handleDelete}><BsArchive /> </button> 
-        <button onClick={handleEdit}><FiEdit3/> </button>
+        <div className="card_container_btns">
+        <button className="card_btn  btn_delete"  onClick={handleDelete}><RiDeleteBin5Line /> </button> 
+        <button className="card_btn  btn_edit" onClick={handleEdit}><FiEdit3/> </button>
         </div>
     </article>
     )

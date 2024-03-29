@@ -30,7 +30,34 @@
 
 }
 
-.card_btns {
+.card_container_btns {
     display: flex;
     justify-content: right;
+    gap: 0.5em;
 }
+
+.card_btn {
+    height: 38px;
+    padding: 6px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 4px;
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
+.btn_delete {
+    
+    color: white;
+    background-color: #D85D5D;
+    border: 1px solid #D93F3F;
+
+}
+
+.btn_edit {
+    color: #D3D3D3;
+    background-color:#F6F6F6;
+    border: 1px solid #BDBDBD ;
+    border-radius: 4px;
+}
+
