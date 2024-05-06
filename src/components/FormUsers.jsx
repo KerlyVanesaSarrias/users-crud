@@ -8,8 +8,6 @@ const FormUsers = ({ createUser, userEdit, updateUser, setUserEdit, formIsClose,
 
     const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
-    console.log('errors', errors)
-
     useEffect(() => {
         reset(userEdit)
     }, [userEdit])
@@ -18,9 +16,9 @@ const FormUsers = ({ createUser, userEdit, updateUser, setUserEdit, formIsClose,
 
         if (userEdit) {
             updateUser('/users/', userEdit.id, data)
-            setUserEdit()
+            setUserEdit(data);
         } else {
-            createUser('/users/', data)
+            createUser('/users', data)
         }
         setFormIsClose(true)
 

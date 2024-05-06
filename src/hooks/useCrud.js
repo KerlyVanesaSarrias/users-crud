@@ -23,7 +23,7 @@ const useCrud = (BASEURL) => {
     }
 
     const deleteApi = (path,id) => {
-        const url = `${BASEURL}${path}${id}/`
+        const url = `${BASEURL}${path}${id}`
         axios.delete(url)
         .then(res => {console.log(res.data)
         setResponse(response.filter(e=>e.id !== id ))
@@ -33,11 +33,11 @@ const useCrud = (BASEURL) => {
     }
 
     const updateApi = (path, id, data ) => {
-        const url = `${BASEURL}${path}${id}/`
-        axios.patch(url,data)
+        const url = `${BASEURL}${path}${id}`
+        axios.put(url,data)
         .then(res => {
-            console.log(res.data)
-            setResponse(response.map(e => e.id === id ? res.data : e ))
+            console.log('user', res.data[1][0])
+            setResponse(response.map(e => e.id === id ? res.data[1][0] : e ))
         })
         .catch(err => console.log(err))
     }
